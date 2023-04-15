@@ -54,8 +54,10 @@
     </head>
     <body>
         <main>
-
-        </main>
+            <form id="TokenForm" class="row g-3" action="./" method="post">
+                    <input id="TokenInput" name="token" type="text" class="form-control" placeholder="ログイン" autocomplete="off">
+                </form>
+            </main>
         <script src="./assets/js/TokenCheck.js"></script>
     </body>
 </html>
