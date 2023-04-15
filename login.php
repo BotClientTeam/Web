@@ -1,21 +1,3 @@
-<?php
-    $Rest = require_once __DIR__."lib/Rest.php";
-
-	session_start();
-
-    if(isset($_POST["token"])){
-        $res = $Rest.Post("https://api.gakerbot.net/check",array(
-            "token"=> htmlspecialchars($_POST["token"]),
-        ));
-        if($res["data"]["login"]){
-            $_SESSION["token"] = htmlspecialchars($_POST["token"]);
-            header("Location: ./");
-        }else{
-            echo "<script type='text/javascript'>alert('ログインに失敗しました');</script>";
-            header("Location: ./login");
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -54,10 +36,10 @@
     </head>
     <body>
         <main>
-            <form id="TokenForm" class="row g-3" action="./" method="post">
-                    <input id="TokenInput" name="token" type="text" class="form-control" placeholder="ログイン" autocomplete="off">
-                </form>
-            </main>
+            <form id="LoginForm" class="row g-3" action="./" method="post">
+                <input id="TokenInput" name="token" type="text" class="form-control" placeholder="ログイン" autocomplete="off">
+            </form>
+        </main>
         <script src="./assets/js/TokenCheck.js"></script>
     </body>
 </html>
