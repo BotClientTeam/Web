@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -40,9 +37,9 @@
     <body>
         <main>
             <form id="LoginForm" class="row g-3" action="./" method="post">
-                    <input id="TokenInput" name="token" type="text" class="form-control" placeholder="ログイン" autocomplete="off">
-                </form>
-            </main>
+                <input id="TokenInput" name="token" type="text" class="form-control" placeholder="ログイン" autocomplete="off">
+            </form>
+        </main>
         <script src="./assets/js/TokenCheck.js"></script>
     </body>
 </html>

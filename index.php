@@ -1,10 +1,10 @@
 <?php
-	$Rest = require_once __DIR__."/lib/Rest.php";
+	require_once __DIR__."/lib/Rest.php";
 
 	session_start();
 
     if(isset($_POST["token"])){
-        $res = $Rest.Post("https://api.gakerbot.net/check",array(
+        $res = Post("https://api.gakerbot.net/check",array(
             "token"=> htmlspecialchars($_POST["token"]),
         ));
         if($res["data"]["login"]){
