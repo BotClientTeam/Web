@@ -1,5 +1,5 @@
 <?php
-    $Rest = require_once __DIR__."lib/Rest.php";
+    $Rest = require_once __DIR__."/lib/Rest.php";
 
 	session_start();
 
@@ -54,7 +54,7 @@
     </head>
     <body>
         <main>
-            <form id="TokenForm" class="row g-3" action="./" method="post">
+            <form id="LoginForm" class="row g-3" action="./" method="post">
                     <input id="TokenInput" name="token" type="text" class="form-control" placeholder="ログイン" autocomplete="off">
                 </form>
             </main>
