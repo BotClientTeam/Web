@@ -1,12 +1,13 @@
 <?php
     require_once __DIR__."/Rest.php";
+    require_once __DIR__."/../config.php";
 
     /**
      * @param String Discord認証トークン
      * @return Boolean トークンが有効か
      */
     function Check($token){
-        $res = Post("https://api.gakerbot.net/check",array(
+        $res = Post($API_URL."/check",array(
             "token" => $token
         ));
 
@@ -20,7 +21,7 @@
      * @return Object BOTの情報
      */
     function Account($token){
-        $res = Post("https://api.gakerbot.net/account",array(
+        $res = Post($API_URL."/account",array(
             "token" => $token
         ));
 
@@ -35,7 +36,7 @@
      * @return Object ユーザーの情報
      */
     function User($token,$userID){
-        $res = Post("https://api.gakerbot.net/users/".$userId,array(
+        $res = Post($API_URL."/users/".$userId,array(
             "token" => $token
         ));
 
@@ -49,7 +50,7 @@
      * @return Array ギルドの一覧
      */
     function Guilds($token){
-        $res = Post("https://api.gakerbot.net/guilds",array(
+        $res = Post($API_URL."/guilds",array(
             "token" => $token
         ));
 
@@ -63,7 +64,7 @@
      * @return Object ギルドの情報
      */
     function Guild($token,$guildId){
-        $res = Post("https://api.gakerbot.net/guilds/".$guildId,array(
+        $res = Post($API_URL."/guilds/".$guildId,array(
             "token" => $token
         ));
 
@@ -79,7 +80,7 @@
      * @return Array ギルドメンバーの一覧
      */
     function GuildMembers($token,$guildId,$limit){
-        $res = Post("https://api.gakerbot.net/guilds/".$guildId."/members?limit=".$limit,array(
+        $res = Post($API_URL."/guilds/".$guildId."/members?limit=".$limit,array(
             "token" => $token
         ));
 
@@ -95,7 +96,7 @@
      * @return Object ギルドメンバーの一覧
      */
     function GuildMember($token,$guildId,$userId){
-        $res = Post("https://api.gakerbot.net/guilds/".$guildId."/members/".$userId,array(
+        $res = Post($API_URL."/guilds/".$guildId."/members/".$userId,array(
             "token" => $token
         ));
 
@@ -110,7 +111,7 @@
      * @return Array チャンネルの一覧
      */
     function GuildChannels($token,$guildId){
-        $res = Post("https://api.gakerbot.net/guilds/".$guildId."/channels",array(
+        $res = Post($API_URL."/guilds/".$guildId."/channels",array(
             "token" => $token
         ));
 
@@ -125,7 +126,7 @@
      * @return Object チャンネルの情報
      */
     function GuildChannel($token,$channelId){
-        $res = Post("https://api.gakerbot.net/channels/".$channelId,array(
+        $res = Post($API_URL."/channels/".$channelId,array(
             "token" => $token
         ));
 
@@ -140,7 +141,7 @@
      * @return Array チャンネルのメッセージ一覧
      */
     function ChannelMessages($token,$channelId){
-        $res = Post("https://api.gakerbot.net/channels/".$channelId."/messages",array(
+        $res = Post($API_URL."/channels/".$channelId."/messages",array(
             "token" => $token
         ));
 
@@ -156,7 +157,7 @@
      * @return Object チャンネルのメッセージの情報
      */
     function ChannelMessage($token,$channelId,$messageId){
-        $res = Post("https://api.gakerbot.net/channels/".$channelId."/messages/".$messageId,array(
+        $res = Post($API_URL."/channels/".$channelId."/messages/".$messageId,array(
             "token" => $token
         ));
 
@@ -172,7 +173,7 @@
      * @return Object 送信したメッセージの情報
      */
     function CreateMessage($token,$channelId,$message){
-        $res = Post("https://api.gakerbot.net/channels/".$channelId."/message",array(
+        $res = Post($API_URL."/channels/".$channelId."/message",array(
             "token" => $token,
             "message" => $message
         ));
