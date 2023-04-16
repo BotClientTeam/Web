@@ -7,6 +7,7 @@ LoginForm.addEventListener("submit",async()=>{
       !TokenInput.value.match(/[0-9a-zA-Z_-]{24}\.[0-9a-zA-Z_-]{6}\.[0-9a-zA-Z_-]{27}/)
     ){
       event.preventDefault();
+      TokenInput.value = "";
       alert("BOTのTokenを入力してください");
     }
 });

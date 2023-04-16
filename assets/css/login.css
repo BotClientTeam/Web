@@ -1,8 +1,8 @@
-html,body {
-    height: 100%;
-}
-
 body {
     background: url(../img/bg.png) center no-repeat,center no-repeat #282b30
 }
 
+#LoginForm {
+    width: 40%;
+    margin: 380px auto;
+}

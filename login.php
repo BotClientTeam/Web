@@ -1,3 +1,21 @@
+<?php 
+	require_once __DIR__."/lib/Rest.php";
+
+	session_start();
+
+    if(isset($_POST["token"])){
+        $res = Post("https://api.gakerbot.net/check",array(
+            "token"=> htmlspecialchars($_POST["token"])
+        ));
+
+        if($res["data"]["login"]){
+            $_SESSION["token"] = htmlspecialchars($_POST["token"]);
+            header("Location: ./");
+        }else{
+            echo "<script type='text/javascript'>alert('ログインに失敗しました 有効なTokenを使用してください');</script>";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -10,7 +28,8 @@
 
         <title>Discord BOT Client</title>
 
-        <link rel="stylesheet" href="./assets/css/main.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/login.css">
 
         <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
@@ -36,8 +55,8 @@
     </head>
     <body>
         <main>
-            <form id="LoginForm" class="row g-3" action="./" method="post">
-                <input id="TokenInput" name="token" type="text" class="form-control" placeholder="ログイン" autocomplete="off">
+            <form id="LoginForm" action="./login" method="post">
+                <input class="form-control" id="TokenInput" name="token" type="text" placeholder="BOTのトークンを入力してください" autocomplete="off">
             </form>
         </main>
         <script src="./assets/js/TokenCheck.js"></script>

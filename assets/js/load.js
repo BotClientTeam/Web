@@ -1,3 +1,3 @@
-window.onload = (event)=>{
-    console.log("Load.....");
+window.onload = ()=>{
+  console.log("Discord BOT Clientへようこそ!");
 };

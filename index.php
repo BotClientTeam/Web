@@ -1,20 +1,5 @@
 <?php
-	require_once __DIR__."/lib/Rest.php";
-
 	session_start();
-
-    if(isset($_POST["token"])){
-        $res = Post("https://api.gakerbot.net/check",array(
-            "token"=> htmlspecialchars($_POST["token"]),
-        ));
-        if($res["data"]["login"]){
-            $_SESSION["token"] = htmlspecialchars($_POST["token"]);
-            header("Location: ./");
-        }else{
-            echo "<script type='text/javascript'>alert('ログインに失敗しました');</script>";
-            header("Location: ./login");
-        }
-    }
 
 	if(!isset($_SESSION["token"])){
 		header("Location: ./login");
@@ -60,5 +45,6 @@
 		<main>
 
 		</main>
+		<script src="./assets/js/load.js"></script>
 	</body>
 </html>
