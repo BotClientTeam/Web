@@ -1,3 +1,3 @@
 <?php
-    $API_URL = "https://api.gakerbot.net:8000";
+    $API_URL = "https://api.gakerbot.net";
 ?>
