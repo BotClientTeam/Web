@@ -1,14 +1,12 @@
 <?php 
-	require_once __DIR__."/lib/Rest.php";
+	require_once __DIR__."/lib/discord.php";
 
 	session_start();
 
     if(isset($_POST["token"])){
-        $res = Post("https://api.gakerbot.net/check",array(
-            "token"=> htmlspecialchars($_POST["token"])
-        ));
+        $res = Check(htmlspecialchars($_POST["token"]));
 
-        if($res["data"]["login"]){
+        if($res){
             $_SESSION["token"] = htmlspecialchars($_POST["token"]);
             header("Location: ./");
         }else{
