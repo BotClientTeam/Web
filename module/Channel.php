@@ -8,7 +8,7 @@
         return;
     }
 
-    $channels = GuildChannels($_SESSION["token"],htmlspecialchars($_POST["channelId"]));
+    $channels = GuildChannels($_SESSION["token"],htmlspecialchars($_POST["guildId"]));
     if(!$channels){
         echo "<div></div>";
         return;

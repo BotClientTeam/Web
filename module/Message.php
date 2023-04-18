@@ -9,7 +9,7 @@
         return;
     }
 
-    $messages = ChannelMessages($_SESSION["token"],htmlspecialchars($_POST["guildId"]));
+    $messages = ChannelMessages($_SESSION["token"],htmlspecialchars($_POST["channelId"]));
     if(!$messages){
         echo "<div></div>";
         return;
