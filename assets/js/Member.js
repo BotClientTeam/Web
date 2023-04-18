@@ -4,7 +4,7 @@ GuildList.forEach(guild=>{
     const guildId = item.dataset.itemId;
     if(!guildId.match(/\d{18,19}/g)) return;
 
-    const res = await fetch("../module/Channel.php",{
+    const res = await fetch("../module/Member.php",{
       method: "POST",
       credentials: "include",
       headers: {
@@ -12,16 +12,16 @@ GuildList.forEach(guild=>{
       },
       body: JSON.stringify(
         {
-          "guildId": guildId 
+          "guildId": guidId 
         }
       )
     })
     .then(res=>res.text())
     .catch(error=>{
       console.error(error);
-      alert("チャンネルを取得できませんでした");
+      alert("メンバーを取得できませんでした");
     });
 
-    document.getElementById("channel").insertAdjacentHTML("beforeend",res);
+    document.getElementById("member").insertAdjacentHTML("beforeend",res);
 });
 });
