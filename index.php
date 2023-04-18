@@ -54,7 +54,7 @@
         		<h3>SERVER</h3>
 				<ul>
 					<?php foreach ($guilds as $guild){ ?>
-        				<li class="GuildList" data-item-id="<?= $guild["id"] ?>">
+        				<li class="GuildList" id="<?= $guild["id"] ?>" data-item-id="<?= $guild["id"] ?>">
 							<img src="https://cdn.discordapp.com/icon/<?= $guild["id"] ?>/<?= $guild["icon"] ?>.png" alt="サーバーアイコン">
             				<span><?= $guild["name"] ?></span>
 						</li>

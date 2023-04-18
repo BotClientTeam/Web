@@ -17,7 +17,7 @@
 ?>
 
 <?php foreach ($messages as $message){ ?>
-    <div class="message">
+    <div class="message" id="<?= $message["id"] ?>">
         <img src="https://cdn.discordapp.com/avatars/<?= $message["author"]["id"] ?>/<?= $message["author"]["avatar"] ?>.png" alt="アバター" class="avatar">
         <div class="content">
             <p><span class="username"><?= $message["author"]["username"] ?>#<?= $message["author"]["discriminator"] ?>:</span><?= $message["content"] ?></p>

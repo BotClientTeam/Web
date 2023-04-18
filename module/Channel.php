@@ -17,6 +17,8 @@
 
 <ul>
     <?php foreach ($channels as $channel){ ?>
-        <li class="ChannelList" data-item-id="<?= $channel["id"] ?>">#<?= $channel["name"] ?></li>
+        <li class="ChannelList" id="<?= $channel["id"] ?>" data-item-id="<?= $channel["id"] ?>">
+            #<?= $channel["name"] ?>
+        </li>
     <?php } ?>
 </ul>
