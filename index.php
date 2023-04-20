@@ -54,7 +54,7 @@
         		<h3>SERVER</h3>
 				<ul>
 					<?php foreach ($guilds as $guild){ ?>
-        				<li class="GuildList" id="<?= $guild["id"] ?>" data-item-id="<?= $guild["id"] ?>">
+        				<li class="GuildId" id="<?= $guild["id"] ?>" data-item-id="<?= $guild["id"] ?>">
 							<img src="https://cdn.discordapp.com/icon/<?= $guild["id"] ?>/<?= $guild["icon"] ?>.png" alt="サーバーアイコン">
             				<span><?= $guild["name"] ?></span>
 						</li>
@@ -88,7 +88,6 @@
     	</div>
 		<script src="./assets/js/load.js"></script>
 		<script src="./assets/js/Channel.js"></script>
-		<script src="./assets/js/Member.js"></script>
-		<script src="./assets/js/Message.js"></script>
+		<script src="./assets/js/Guild.js"></script>
 	</body>
 </html>

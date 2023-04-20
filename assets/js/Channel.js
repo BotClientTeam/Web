@@ -1,10 +1,10 @@
-const ChannelList = document.querySelectorAll(".ChannelList");
+const ChannelList = document.querySelectorAll(".ChannelId");
 ChannelList.forEach(channel=>{
   channel.addEventListener("click",async()=>{
     const channelId = item.dataset.itemId;
     if(!channelId.match(/\d{18,19}/g)) return;
 
-    const Message = await fetch("../module/Message.php",{
+    const Messages = await fetch("../module/Message.php",{
       method: "POST",
       credentials: "include",
       headers: {
@@ -40,7 +40,7 @@ ChannelList.forEach(channel=>{
       alert("メッセージを取得できませんでした");
     });
 
-    document.getElementById("messages").insertAdjacentHTML("beforeend",Message);
-    document.getElementById("channel").insertAdjacentHTML("beforeend",Message);
+    document.getElementById("messages").innerHTML = Messages;
+    document.getElementById("ChannelName").innerHTML = ChannelName;
   });
 });
