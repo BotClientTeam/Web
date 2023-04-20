@@ -35,6 +35,7 @@ GuildList.forEach(guild=>{
     const script = document.createElement("script");
     script.src = "./assets/js/Channel.js";
     
+    document.getElementById("LoadChannel").textContent = "";
     document.getElementById("LoadChannel").appendChild(script);
 
     console.log("Loaded Channel and Member");
