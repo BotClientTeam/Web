@@ -64,15 +64,15 @@
       		<div id="channel">
         		<h3>CHANNEL</h3>
 				<ul id="ChannelList">
-
+					<!-- Channel List -->
 				</ul>
 	    	</div>
       		<div id="main">
         		<header id="ChannelName">
           			<!-- Channel Name -->
        	 		</header>
-        		<div class="messages">
-        
+        		<div id="messages">
+        			<!-- Message -->
         		</div>
         		<footer>
           			<input type="text" placeholder="メッセージを送信...">
@@ -82,12 +82,14 @@
       		<div id="member">
         		<h3>MEMBER</h3>
 				<ul id="MemberList">
-
+					<!-- Member List -->
 				</ul>
       		</div>
     	</div>
+		<div id="LoadChannel">
+
+		</div>
 		<script src="./assets/js/load.js"></script>
-		<script src="./assets/js/Channel.js"></script>
 		<script src="./assets/js/Guild.js"></script>
 	</body>
 </html>

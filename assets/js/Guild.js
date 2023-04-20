@@ -32,6 +32,11 @@ GuildList.forEach(guild=>{
     });
     document.getElementById(guildId).classList.add("active");
 
+    const script = document.createElement("script");
+    script.src = "./assets/js/Channel.js";
+    
+    document.getElementById("LoadChannel").appendChild(script);
+
     console.log("Loaded Channel and Member");
   });
 });
