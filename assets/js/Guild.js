@@ -27,10 +27,10 @@ GuildList.forEach(guild=>{
     document.getElementById("ChannelList").innerHTML = Channel;
     document.getElementById("MemberList").innerHTML = Member;
 
-    document.querySelectorAll(".GuildId").forEach(guild=>{
+    GuildList.forEach(guild=>{
         guild.classList.remove("active");
     });
-    document.getElementById(guildId).classList.add("active")
+    document.getElementById(guildId).classList.add("active");
 
     console.log("Loaded Channel and Member");
   });
