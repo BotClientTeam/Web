@@ -1,6 +1,7 @@
 <?php
     require_once __DIR__."/Rest.php";
-    require_once __DIR__."/../config.php";
+    
+    $API_URL = "https://api.gakerbot.net";
 
     /**
      * @param String Discord認証トークン
