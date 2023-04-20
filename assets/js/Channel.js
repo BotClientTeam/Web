@@ -1,20 +1,12 @@
 const ChannelList = document.querySelectorAll(".ChannelId");
 ChannelList.forEach(channel=>{
   channel.addEventListener("click",async()=>{
-    const channelId = item.dataset.itemId;
+    const channelId = channel.dataset.itemId;
     if(!channelId.match(/\d{18,19}/g)) return;
 
-    const Messages = await fetch("../module/Message.php",{
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(
-        {
-          "channelId": channelId 
-        }
-      )
+    const Messages = await fetch(`../module/Message.php?channelId=${channelId}`,{
+      method: "GET",
+      credentials: "include"
     })
     .then(res=>res.text())
     .catch(error=>{
@@ -22,17 +14,9 @@ ChannelList.forEach(channel=>{
       alert("メッセージを取得できませんでした");
     });
 
-    const ChannelName = await fetch("../module/ChannelName.php",{
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(
-        {
-          "channelId": channelId 
-        }
-      )
+    const ChannelName = await fetch(`../module/ChannelName.php?channelId=${channelId}`,{
+      method: "GET",
+      credentials: "include"
     })
     .then(res=>res.text())
     .catch(error=>{
@@ -42,5 +26,7 @@ ChannelList.forEach(channel=>{
 
     document.getElementById("messages").innerHTML = Messages;
     document.getElementById("ChannelName").innerHTML = ChannelName;
+
+    console.log("Loaded Message and ChannelName");
   });
 });

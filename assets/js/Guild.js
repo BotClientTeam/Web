@@ -1,20 +1,12 @@
 const GuildList = document.querySelectorAll(".GuildId");
 GuildList.forEach(guild=>{
   guild.addEventListener("click",async()=>{
-    const guildId = item.dataset.itemId;
+    const guildId = guild.dataset.itemId;
     if(!guildId.match(/\d{18,19}/g)) return;
 
-    const Channel = await fetch("../module/Channel.php",{
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(
-        {
-          "guildId": guildId 
-        }
-      )
+    const Channel = await fetch(`../module/Channel.php?guildId=${guildId}`,{
+      method: "GET",
+      credentials: "include"
     })
     .then(res=>res.text())
     .catch(error=>{
@@ -22,17 +14,9 @@ GuildList.forEach(guild=>{
       alert("チャンネルを取得できませんでした");
     });
 
-    const Member = await fetch("../module/Member.php",{
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(
-        {
-          "guildId": guildId
-        }
-      )
+    const Member = await fetch(`../module/Member.php?guildId=${guildId}`,{
+      method: "GET",
+      credentials: "include"
     })
     .then(res=>res.text())
     .catch(error=>{
@@ -42,5 +26,7 @@ GuildList.forEach(guild=>{
 
     document.getElementById("ChannelList").innerHTML = Channel;
     document.getElementById("MemberList").innerHTML = Member;
-});
+
+    console.log("Loaded Channel and Member");
+  });
 });

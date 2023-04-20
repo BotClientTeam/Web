@@ -4,14 +4,14 @@
     date_default_timezone_set("Asia/Tokyo");
 	session_start();
 
-    if(!isset($_SESSION["token"]||!isset($_POST["channelId"]))){
-        echo "<div></div>";
+    if(!isset($_SESSION["token"])||!isset($_GET["channelId"])){
+        echo "<div>セッションが無効</div>";
         return;
     }
 
-    $messages = ChannelMessages($_SESSION["token"],htmlspecialchars($_POST["channelId"]));
+    $messages = ChannelMessages($_SESSION["token"],htmlspecialchars($_GET["channelId"]));
     if(!$messages){
-        echo "<div></div>";
+        echo "<div>存在しないサーバー</div>";
         return;
     }
 ?>

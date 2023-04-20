@@ -3,14 +3,14 @@
 
 	session_start();
 
-    if(!isset($_SESSION["token"]||!isset($_POST["guildId"]))){
-        echo "<li></li>";
+    if(!isset($_SESSION["token"])||!isset($_GET["guildId"])){
+        echo "<li>セッションが無効です</li>";
         return;
     }
 
-    $channels = GuildChannels($_SESSION["token"],htmlspecialchars($_POST["guildId"]));
+    $channels = GuildChannels($_SESSION["token"],htmlspecialchars($_GET["guildId"]));
     if(!$channels){
-        echo "<li></li>";
+        echo "<li>存在しないサーバー</li>";
         return;
     }
 ?>
