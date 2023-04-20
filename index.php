@@ -75,8 +75,8 @@
         			<!-- Message -->
         		</div>
         		<footer>
-          			<input type="text" placeholder="メッセージを送信...">
-          			<button>送信</button>
+          			<input id="SendInput" type="text" placeholder="メッセージを送信">
+          			<button id="SendButton">送信</button>
         		</footer>
       		</div>
       		<div id="member">
@@ -87,9 +87,10 @@
       		</div>
     	</div>
 		<div id="LoadChannel">
-
+			<!-- Load Channel Script -->
 		</div>
 		<script src="./assets/js/load.js"></script>
+		<script src="./assets/js/SendMessage.js"></script>
 		<script src="./assets/js/Guild.js"></script>
 	</body>
 </html>
