@@ -32,11 +32,19 @@ GuildList.forEach(guild=>{
     });
     document.getElementById(guildId).classList.add("active");
 
-    const script = document.createElement("script");
-    script.src = "./assets/js/Channel.js";
-    
-    document.getElementById("LoadChannel").textContent = "";
-    document.getElementById("LoadChannel").appendChild(script);
+    const script = document.querySelector("#LoadChannel script");
+    if(script){
+      const newScript = document.createElement("script");
+      newScript.src = "./assets/js/Channel.js";
+      
+      document.getElementById("LoadChannel").appendChild(script);
+    }else{
+      script.parentNode.removeChild(script);
+      const newScript = document.createElement("script");
+      newScript.src = "./assets/js/Channel.js";
+
+      document.getElementById("LoadChannel").appendChild(newScript);
+    }
 
     console.log("Loaded Channel and Member");
   });
