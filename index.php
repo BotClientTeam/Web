@@ -1,8 +1,15 @@
 <?php
+	require_once __DIR__."/lib/discord.php";
+
 	session_start();
 
 	if(!isset($_SESSION["token"])){
 		header("Location: ./login");
+	}
+
+	$guilds = Guilds($_SESSION["token"]);
+	if(!$guilds){
+		echo "<script type='text/javascript'>alert('サーバー一覧が取得できません ログインしなおしてください');</script>";
 	}
 ?>
 <!DOCTYPE html>
@@ -17,8 +24,7 @@
 
 		<title>Discord BOT Client</title>
 
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-		<link rel="stylesheet" href="./assets/css/main.css">
+		<link rel="stylesheet" href="./assets/css/app.css">
 
 		<link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
@@ -43,9 +49,45 @@
 		<meta name="keywords" content="Discord,BOT">
 	</head>
 	<body>
-		<main>
+		<div id="content">
+      		<div id="server">
+        		<h3>SERVER</h3>
+				<ul>
+					<?php foreach ($guilds as $guild){ ?>
+        				<li class="GuildId" id="<?= $guild["id"] ?>" data-item-id="<?= $guild["id"] ?>">
+							<img src="https://cdn.discordapp.com/icon/<?= $guild["id"] ?>/<?= $guild["icon"] ?>.png" alt="サーバーアイコン">
+            				<span><?= $guild["name"] ?></span>
+						</li>
+    				<?php } ?>
+				</ul>
+      		</div>  
+      		<div id="channel">
+        		<h3>CHANNEL</h3>
+				<ul id="ChannelList">
 
-		</main>
+				</ul>
+	    	</div>
+      		<div id="main">
+        		<header id="ChannelName">
+          			<!-- Channel Name -->
+       	 		</header>
+        		<div class="messages">
+        
+        		</div>
+        		<footer>
+          			<input type="text" placeholder="メッセージを送信...">
+          			<button>送信</button>
+        		</footer>
+      		</div>
+      		<div id="member">
+        		<h3>MEMBER</h3>
+				<ul id="MemberList">
+
+				</ul>
+      		</div>
+    	</div>
 		<script src="./assets/js/load.js"></script>
+		<script src="./assets/js/Channel.js"></script>
+		<script src="./assets/js/Guild.js"></script>
 	</body>
 </html>
