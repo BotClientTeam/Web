@@ -27,6 +27,25 @@ GuildList.forEach(guild=>{
     document.getElementById("ChannelList").innerHTML = Channel;
     document.getElementById("MemberList").innerHTML = Member;
 
+    GuildList.forEach(guild=>{
+        guild.classList.remove("active");
+    });
+    document.getElementById(guildId).classList.add("active");
+
+    const script = document.querySelector("#LoadChannel script");
+    if(script){
+      const newScript = document.createElement("script");
+      newScript.src = "./assets/js/Channel.js";
+      
+      document.getElementById("LoadChannel").appendChild(script);
+    }else{
+      script.parentNode.removeChild(script);
+      const newScript = document.createElement("script");
+      newScript.src = "./assets/js/Channel.js";
+
+      document.getElementById("LoadChannel").appendChild(newScript);
+    }
+
     console.log("Loaded Channel and Member");
   });
 });

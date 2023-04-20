@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__."/Rest.php";
     
-    $GLOBALS["API_URL"] = "http://localhost:8000";
+    $GLOBALS["API_URL"] = "https://api.gakerbot.net";
     
     /**
      * @param String Discord認証トークン

@@ -27,6 +27,11 @@ ChannelList.forEach(channel=>{
     document.getElementById("messages").innerHTML = Messages;
     document.getElementById("ChannelName").innerHTML = ChannelName;
 
+    ChannelList.forEach(channel=>{
+      channel.classList.remove("active");
+    });
+    document.getElementById(channelId).classList.add("active")
+
     console.log("Loaded Message and ChannelName");
   });
 });

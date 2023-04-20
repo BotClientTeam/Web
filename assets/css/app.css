@@ -65,7 +65,7 @@ body {
   font-size: 20px;
 }
 
-#main .messages {
+#main #messages {
   padding: 20px;
   overflow-y: auto;
   height: calc(100% - 120px);
