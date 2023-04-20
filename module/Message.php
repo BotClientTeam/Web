@@ -22,6 +22,6 @@
         <div class="content">
             <p><span class="username"><?= $message["author"]["username"] ?>#<?= $message["author"]["discriminator"] ?>:</span><?= $message["content"] ?></p>
         </div>
-        <div class="timestamp"><?= date("m/d H:i",$message["timestamp"]) ?></div>
+        <div class="timestamp"><?= date("m/d H:i:s",$message["timestamp"]) ?></div>
     </div>
 <?php } ?>
