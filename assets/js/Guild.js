@@ -4,7 +4,7 @@ GuildList.forEach(guild=>{
     const guildId = item.dataset.itemId;
     if(!guildId.match(/\d{18,19}/g)) return;
 
-    const res = await fetch("../module/Channel.php",{
+    const channel = await fetch("../module/Channel.php",{
       method: "POST",
       credentials: "include",
       headers: {
@@ -22,6 +22,6 @@ GuildList.forEach(guild=>{
       alert("チャンネルを取得できませんでした");
     });
 
-    document.getElementById("channel").insertAdjacentHTML("beforeend",res);
+    document.getElementById("channel").insertAdjacentHTML("beforeend",channel);
 });
 });

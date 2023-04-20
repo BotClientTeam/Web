@@ -63,10 +63,13 @@
       		</div>  
       		<div id="channel">
         		<h3>CHANNEL</h3>
+				<ul id="ChannelList">
+
+				</ul>
 	    	</div>
       		<div id="main">
-        		<header>
-          			<h3>#一般</h3>
+        		<header id="ChannelName">
+          			<!-- Channel Name -->
        	 		</header>
         		<div class="messages">
         
@@ -78,9 +81,14 @@
       		</div>
       		<div id="member">
         		<h3>MEMBER</h3>
+				<ul id="MemberList">
 
+				</ul>
       		</div>
     	</div>
 		<script src="./assets/js/load.js"></script>
+		<script src="./assets/js/Channel.js"></script>
+		<script src="./assets/js/Member.js"></script>
+		<script src="./assets/js/Message.js"></script>
 	</body>
 </html>
