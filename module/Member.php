@@ -10,7 +10,7 @@
 
     $members = GuildMembers($_SESSION["token"],htmlspecialchars($_GET["guildId"]),50);
     if(!$members){
-        echo "<li>存在しないサーバー</li>";
+        echo "<li>メンバーが読み込めません</li>";
         return;
     }
 ?>
