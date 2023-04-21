@@ -16,5 +16,5 @@
 ?>
 
 <h3>
-    #<?php $channel["name"] ?>
+    #<?= $channel["name"] ?>
 </h3>

@@ -87,7 +87,7 @@
       		</div>
     	</div>
 		<div id="LoadChannel">
-			<!-- Load Channel Script -->
+			<script src="./assets/js/load.js"></script>
 		</div>
 		<script src="./assets/js/load.js"></script>
 		<script src="./assets/js/SendMessage.js"></script>

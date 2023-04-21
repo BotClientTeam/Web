@@ -33,11 +33,11 @@ GuildList.forEach(guild=>{
     document.getElementById(guildId).classList.add("active");
 
     const script = document.querySelector("#LoadChannel script");
-    if(script){
+    if(!script){
       const newScript = document.createElement("script");
       newScript.src = "./assets/js/Channel.js";
       
-      document.getElementById("LoadChannel").appendChild(script);
+      document.getElementById("LoadChannel").appendChild(newScript);
     }else{
       script.parentNode.removeChild(script);
       const newScript = document.createElement("script");

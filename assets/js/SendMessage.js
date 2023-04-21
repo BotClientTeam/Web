@@ -1,11 +1,11 @@
-const Input = document.getElementById("sendInput");
-const button = document.getElementById("sendButton");
+const Input = document.getElementById("SendInput");
+const button = document.getElementById("SendButton");
 
-Input.addEventListener("submit",()=>{
+Input.addEventListener("submit",(event)=>{
   event.preventDefault();
 });
 
-button.addEventListener("click",()=>{
+button.addEventListener("click",async()=>{
   if(!Input.value) return;
 
   const Channel = document.querySelector("#ChannelList .active");
@@ -31,6 +31,8 @@ button.addEventListener("click",()=>{
   });
 
   document.getElementById("messages").innerHTML = Messages;
+
+  Input.value = "";
 
   console.log("Send Message");
 });
