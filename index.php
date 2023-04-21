@@ -40,13 +40,13 @@
 		<meta property="og:url" content="https://app.gakerbot.net/" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="アプリ" />
-		<meta property="og:description" content="Made By Discord BOT Client Team" />
-		<meta property="og:site_name" content="Discord BOT Client" />
+		<meta property="og:description" content="Made By BOT Client Team" />
+		<meta property="og:site_name" content="BOT Client" />
 		<meta property="og:image" content="https://app.gakerbot.net/assets/img/favicon.ico" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Discord BOT Client Team">
-		<meta name="keywords" content="Discord,BOT">
+		<meta name="description" content="BOT Client Team">
+		<meta name="keywords" content="BOT">
 	</head>
 	<body>
 		<div id="content">
