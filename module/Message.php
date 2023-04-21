@@ -20,7 +20,11 @@
     <div class="message" id="<?= $message["id"] ?>">
         <img src="https://cdn.discordapp.com/avatars/<?= $message["author"]["id"] ?>/<?= $message["author"]["avatar"] ?>.png" alt="アバター" class="avatar">
         <div class="content">
-            <p><span class="username"><?= $message["author"]["username"] ?>#<?= $message["author"]["discriminator"] ?>:</span><?= $message["content"] ?></p>
+            <p>
+                <span class="username"><?= $message["author"]["username"] ?>#<?= $message["author"]["discriminator"] ?></span>
+                <br>
+                <?= $message["content"] ?>
+            </p>
         </div>
         <div class="timestamp"><?= date("m/d H:i:s",strtotime($message["timestamp"])) ?></div>
     </div>
