@@ -11,7 +11,7 @@
 
     $messages = ChannelMessages($_SESSION["token"],htmlspecialchars($_GET["channelId"]));
     if(!$messages){
-        echo "<div>存在しないチャンネル</div>";
+        echo "<div>メッセージが読み込めません</div>";
         return;
     }
 ?>

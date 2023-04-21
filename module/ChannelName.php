@@ -10,7 +10,7 @@
 
     $channel = GuildChannel($_SESSION["token"],htmlspecialchars($_GET["channelId"]));
     if(!$channel){
-        echo "<h3>存在しないチャンネル</h3>";
+        echo "<h3>チャンネルが読み込めません</h3>";
         return;
     }
 ?>
