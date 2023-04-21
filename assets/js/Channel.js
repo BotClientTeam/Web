@@ -28,6 +28,9 @@
       document.getElementById("messages").innerHTML = Messages;
       document.getElementById("ChannelName").innerHTML = ChannelName;
 
+      const scroll = document.getElementById("messages");
+      scroll.scrollTop = scroll.scrollHeight;
+
       ChannelList.forEach(channel=>{
         channel.classList.remove("active");
       });
