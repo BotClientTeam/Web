@@ -31,6 +31,8 @@ body {
   margin: 0;
   padding: 0;
   flex-grow: 1;
+  overflow-y: auto;
+  height: calc(100% - 120px);
 }
 
 #channel ul li {
@@ -131,7 +133,7 @@ body {
   background-color: #7289da;
   color: #fff;
   border: none;
-  padding: 9px 18px;
+  padding: 3px 15px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
@@ -232,4 +234,17 @@ body {
 #member li span {
   font-size: 14px;
   font-weight: bold;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232529;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #32353a;
 }
