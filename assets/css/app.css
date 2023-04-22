@@ -13,17 +13,11 @@ body {
 
 #channel {
   width: 240px;
-  padding: 20px;
-  height: 100%;
+  padding: 60px 20px 0px;
+  height: calc(100% - 20px);
   background-color: #2f3136;
   display: flex;
   flex-direction: column;
-}
-
-#channel h3 {
-  margin-bottom: 10px;
-  font-size: 16px;
-  padding: 10px 20px;
 }
 
 #channel ul {
@@ -155,11 +149,6 @@ body {
   overflow-y: auto;
 }
 
-#server h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
 #server ul {
   list-style-type: none;
   margin: 0;
@@ -197,16 +186,11 @@ body {
 #member {
   background-color: #2f3136;
   color: #dcddde;
-  width: 240px;
-  height: 100%;
-  padding: 20px;
+  width: 200px;
+  height: calc(100% - 20px);
+  padding: 60px 0px 0px;
   margin-left: auto;
   overflow-y: auto;
-}
-
-#member h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
 }
 
 #member ul {
