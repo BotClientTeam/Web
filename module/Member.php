@@ -1,5 +1,6 @@
 <?php
 	require_once __DIR__."/../lib/discord.php";
+    require_once __DIR__."/../lib/convert.php";
 
 	session_start();
 
@@ -17,7 +18,7 @@
 
 <?php foreach ($members as $member){ ?>
     <li class="MemberId" id="<?= $member["user"]["id"] ?>" data-item-id="<?= $member["user"]["id"] ?>">
-        <img src="https://cdn.discordapp.com/avatars/<?= $member["user"]["id"] ?>/<?= $member["user"]["avatar"] ?>.png" alt="メンバーアバター">
+        <img src="<?= AvatarURL($member["user"]["id"],$member["user"]["avatar"]) ?>" alt="メンバーアバター">
         <span><?= $member["user"]["username"] ?>#<?= $member["user"]["discriminator"] ?></span>
     </li>
 <?php } ?>

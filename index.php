@@ -1,5 +1,6 @@
 <?php
 	require_once __DIR__."/lib/discord.php";
+	require_once __DIR__."/lib/convert.php";
 
 	session_start();
 
@@ -55,7 +56,7 @@
 				<ul>
 					<?php foreach ($guilds as $guild){ ?>
         				<li class="GuildId" id="<?= $guild["id"] ?>" data-item-id="<?= $guild["id"] ?>">
-							<img src="https://cdn.discordapp.com/icons/<?= $guild["id"] ?>/<?= $guild["icon"] ?>.png" alt="サーバーアイコン">
+							<img src="<?= IconURL($guild["id"],$guild["icon"]) ?>" alt="サーバーアイコン">
             				<span><?= $guild["name"] ?></span>
 						</li>
     				<?php } ?>
