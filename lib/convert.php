@@ -22,4 +22,10 @@
             return "https://cdn.discordapp.com/embed/avatars/0.png";
         }
     }
+
+    function TextChannel($channels){
+        return array_filter($channels,function($channel){
+            if($channel["type"] == 0) return $channel;
+        });
+    }
 ?>
