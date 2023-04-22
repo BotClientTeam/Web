@@ -1,5 +1,6 @@
 <?php
 	require_once __DIR__."/../lib/discord.php";
+    require_once __DIR__."/../lib/convert.php";
 
 	session_start();
 
@@ -15,7 +16,7 @@
     }
 ?>
 
-<?php foreach ($channels as $channel){ ?>
+<?php foreach (TextChannel($channels) as $channel){ ?>
     <li class="ChannelId" id="<?= $channel["id"] ?>" data-item-id="<?= $channel["id"] ?>">
         #<?= $channel["name"] ?>
     </li>

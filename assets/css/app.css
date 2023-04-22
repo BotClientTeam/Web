@@ -31,6 +31,8 @@ body {
   margin: 0;
   padding: 0;
   flex-grow: 1;
+  overflow-y: auto;
+  height: calc(100% - 120px);
 }
 
 #channel ul li {
@@ -50,6 +52,7 @@ body {
 #main {
   flex-grow: 1;
   background-color: #40444b;
+  width: 600px;
 }
 
 #main header {
@@ -131,7 +134,7 @@ body {
   background-color: #7289da;
   color: #fff;
   border: none;
-  padding: 9px 18px;
+  padding: 3px 15px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
@@ -149,6 +152,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 #server h3 {
@@ -197,6 +201,7 @@ body {
   height: 100%;
   padding: 20px;
   margin-left: auto;
+  overflow-y: auto;
 }
 
 #member h3 {
@@ -232,4 +237,18 @@ body {
 #member li span {
   font-size: 14px;
   font-weight: bold;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232529;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #32353a;
 }
