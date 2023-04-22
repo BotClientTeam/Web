@@ -152,6 +152,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 #server h3 {
@@ -200,6 +201,7 @@ body {
   height: 100%;
   padding: 20px;
   margin-left: auto;
+  overflow-y: auto;
 }
 
 #member h3 {
