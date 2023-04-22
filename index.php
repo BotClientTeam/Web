@@ -52,7 +52,6 @@
 	<body>
 		<div id="content">
       		<div id="server">
-        		<h3>SERVER</h3>
 				<ul>
 					<?php foreach ($guilds as $guild){ ?>
         				<li class="GuildId" id="<?= $guild["id"] ?>" data-item-id="<?= $guild["id"] ?>">
@@ -63,7 +62,6 @@
 				</ul>
       		</div>  
       		<div id="channel">
-        		<h3>CHANNEL</h3>
 				<ul id="ChannelList">
 					<!-- Channel List -->
 				</ul>
@@ -81,7 +79,6 @@
         		</footer>
       		</div>
       		<div id="member">
-        		<h3>MEMBER</h3>
 				<ul id="MemberList">
 					<!-- Member List -->
 				</ul>
