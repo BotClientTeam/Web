@@ -23,7 +23,7 @@
             <meta http-equiv="refresh" content="0;URL=error/noscript.html">
         </noscript>
 
-		<title>Discord BOT Client</title>
+		<title>BOT Client</title>
 
 		<link rel="stylesheet" href="./assets/css/app.css">
 
