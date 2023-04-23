@@ -19,6 +19,6 @@
 <?php foreach ($members as $member){ ?>
     <li class="MemberId" id="<?= $member["user"]["id"] ?>" data-item-id="<?= $member["user"]["id"] ?>">
         <img src="<?= AvatarURL($member["user"]["id"],$member["user"]["avatar"]) ?>" alt="メンバーアバター">
-        <span><?= $member["user"]["username"] ?>#<?= $member["user"]["discriminator"] ?></span>
+        <span><?= htmlspecialchars($member["user"]["username"]) ?>#<?= $member["user"]["discriminator"] ?></span>
     </li>
 <?php } ?>

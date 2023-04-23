@@ -22,9 +22,9 @@
         <img src="<?= AvatarURL($message["author"]["id"],$message["author"]["avatar"]) ?>" alt="アバター" class="avatar">
         <div class="content">
             <p>
-                <span class="username"><?= $message["author"]["username"] ?>#<?= $message["author"]["discriminator"] ?></span>
+                <span class="username"><?= htmlspecialchars($message["author"]["username"]) ?>#<?= $message["author"]["discriminator"] ?></span>
                 <br>
-                <?= $message["content"] ?>
+                <?= htmlspecialchars($message["content"]) ?>
             </p>
         </div>
         <div class="timestamp"><?= date("m/d H:i:s",strtotime($message["timestamp"])) ?></div>
