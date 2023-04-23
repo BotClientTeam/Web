@@ -7,6 +7,9 @@
 	if(!isset($_SESSION["token"])){
 		header("Location: ./login");
 	}
+		
+	$check = Check($_SESSION["token"]);
+	if(!$check) return header("Location: ./login");
 
 	$guilds = Guilds($_SESSION["token"]);
 	if(!$guilds){
