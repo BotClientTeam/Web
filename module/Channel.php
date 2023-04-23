@@ -18,6 +18,6 @@
 
 <?php foreach (TextChannel($channels) as $channel){ ?>
     <li class="ChannelId" id="<?= $channel["id"] ?>" data-item-id="<?= $channel["id"] ?>">
-        #<?= $channel["name"] ?>
+        #<?= htmlspecialchars($channel["name"]) ?>
     </li>
 <?php } ?>

@@ -16,5 +16,5 @@
 ?>
 
 <h3>
-    #<?= $channel["name"] ?>
+    #<?= htmlspecialchars($channel["name"]) ?>
 </h3>
