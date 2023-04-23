@@ -1,12 +1,7 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
-
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
-
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
 ErrorDocument 401 /error/401.html
 ErrorDocument 403 /error/403.html
