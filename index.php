@@ -47,7 +47,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="BOT Client Team">
-		<meta name="keywords" content="BOT">
+		<meta name="keywords" content="BOT,テクノロジー">
 	</head>
 	<body>
 		<div id="content">

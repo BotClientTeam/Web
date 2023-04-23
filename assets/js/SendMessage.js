@@ -1,10 +1,6 @@
 const Input = document.getElementById("SendInput");
 const button = document.getElementById("SendButton");
 
-Input.addEventListener("submit",(event)=>{
-  event.preventDefault();
-});
-
 button.addEventListener("click",async()=>{
   if(!Input.value) return;
 
