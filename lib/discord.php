@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__."/Rest.php";
     
-    $GLOBALS["API_URL"] = "https://api.gakerbot.net";
+    $GLOBALS["API_URL"] = "https://chatws.takadev.jp:5000";
     
     /**
      * @param String Discord認証トークン
