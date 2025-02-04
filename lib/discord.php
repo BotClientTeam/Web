@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__."/Rest.php";
     
-    $GLOBALS["API_URL"] = "https://api.bc.harukoto.jp";
+    $GLOBALS["API_URL"] = "https://apibc.harukoto.jp";
     
     /**
      * @param String Discord認証トークン
